@@ -1,0 +1,7 @@
+<p>Feel Good Coffee</p>
+
+<ul>
+    {% for coffee in coffee %}
+        <li>{{ coffee.name }}  (${{ coffee.price }})</li>
+    {% endfor %}
+</ul>
