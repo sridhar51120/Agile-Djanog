@@ -1,7 +1,22 @@
-<p>Feel Good Coffee</p>
+{% extends 'base.html' %}
 
-<ul>
-    {% for coffee in coffee %}
-        <li>{{ coffee.name }}  (${{ coffee.price }})</li>
-    {% endfor %}
-</ul>
+
+{% block content %}
+<h3>Feel Good Coffee</h3>
+<div class="container">
+    <div class="row">
+        {% for coffee in coffee %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ coffee.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ coffee.name }}</h5>
+                    <p class="card-text">${{ coffee.price }}</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
